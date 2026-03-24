@@ -357,6 +357,7 @@ export default defineConfig(
 				'error',
 				{ ignoreArrowShorthand: true, ignoreVoidOperator: true },
 			],
+			'@typescript-eslint/no-duplicate-enum-values': 'off',
 			'@typescript-eslint/no-duplicate-type-constituents': 'off',
 			'@typescript-eslint/no-empty-object-type': ['error', { allowInterfaces: 'with-single-extends' }],
 			'@typescript-eslint/no-explicit-any': 'off',

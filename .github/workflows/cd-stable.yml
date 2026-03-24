@@ -30,6 +30,11 @@ jobs:
               run: pnpm install
             - name: Package extension
               run: pnpm run package
+            - name: upload artifacts
+              uses: actions/upload-artifact@v7
+              with:
+                  name: vsix-package
+                  path: ./${{ env.PACKAGE_NAME }}.vsix
             - name: Publish Extension to VS Code Marketplace
               run: pnpm vsce publish --no-dependencies --packagePath ./${{ env.PACKAGE_NAME }}.vsix -p ${{ secrets.GITLENS_VSCODE_MARKETPLACE_PAT }}
             - name: Publish extension to OpenVSIX
